@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: hexlet-code
+Version: 0.1.0
+Author-email: Olha Devlysh <odevlysh@gmail.com>
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/Odevlysh/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Odevlysh/python-project-50/actions)
+
+### You can see a demo of the step 4 here:
+https://asciinema.org/a/2SmCRloV6LYx2hDX2flcyw5Eg

@@ -1,21 +1,19 @@
-[tool.poetry]
+[project]
 name = "hexlet-code"
 version = "0.1.0"
 description = ""
-authors = [" Olha Devlysh <odevlysh@gmail.com>"]
-license = "MIT"
+authors = [{ name = "Olha Devlysh", email = "odevlysh@gmail.com" }]
+license = { text = "MIT" }
 readme = "README.md"
-packages = [
-  { include = "gendiff" },
-]
+requires-python = ">=3.11"
+dependencies = []
 
-[tool.poetry.dependencies]
-python = "^3.11"
+[project.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
 
+[tool.uv]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 
-[tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:main"
