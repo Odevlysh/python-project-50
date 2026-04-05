@@ -1,12 +1,13 @@
 def generate_diff(file1_data, file2_data):
 
     differences = {}
-    all_keys = sorted(file1_data.keys() | file2_data.keys()) 
+    all_keys = sorted(file1_data.keys() | file2_data.keys())
 
     for key in all_keys:
         if key in file1_data and key in file2_data:
             if file1_data[key] != file2_data[key]:
-                differences[key] = ('changed', file1_data[key], file2_data[key])
+                differences[key] = (
+                    'changed', file1_data[key], file2_data[key])
             elif file1_data[key] == file2_data[key]:
                 differences[key] = ('same', file1_data[key])
         elif key in file1_data:
@@ -32,23 +33,24 @@ def format_diff(differences):
             result.append(f"    {key}: {value[1]}")
 
     return "{\n" + "\n".join(result) + "\n}"
-            
+
 
 def main():
     import argparse
     import json
-    
-    parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
-    
+
+    parser = argparse.ArgumentParser(
+        description='Compares two configuration files and shows a difference.')
+
     parser.add_argument('first_file', help='First configuration file')
     parser.add_argument('second_file', help='Second configuration file')
-    
+
     parser.add_argument(
-        '-f', '--format', 
+        '-f', '--format',
         help='set format of output',
         metavar='FORMAT'
     )
-    
+
     args = parser.parse_args()
 
     with open(args.first_file, 'r') as file1:
@@ -60,7 +62,7 @@ def main():
     # tmp - for testing
     # print('Data from the first file:', file1_data)
     # print('Data from the secosnd file:', file2_data)
-    
+
     result = generate_diff(file1_data, file2_data)
     print(result)
 
