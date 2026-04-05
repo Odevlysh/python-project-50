@@ -6,14 +6,19 @@ authors = [{ name = "Olha Devlysh", email = "odevlysh@gmail.com" }]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    # Add dependencies here if needed
+]
 
 [project.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
 
-[tool.uv]
-
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
 
