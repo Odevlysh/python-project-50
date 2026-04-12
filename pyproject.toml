@@ -8,6 +8,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     # Add dependencies here if needed
+    "pyyaml>=6.0.3",
 ]
 
 [project.scripts]
